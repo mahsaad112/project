@@ -6,7 +6,7 @@ body {
   padding: 0;
   height: 100vh;
   font-family: 'Georgia', serif;
-  background: linear-gradient(to top, #3b240b, #8b4513, #ffb347);
+  background: #3b240b;
   overflow: hidden;
   color: #fff7e6;
   display: flex;
@@ -50,19 +50,19 @@ body {
 .lumberjack {
   bottom: 10%;
   left: 15%;
-  width: 128px;          /* scaled from 48x48 */
+  width: 128px;       /* scaled from 48x48 */
   height: 128px;
   background-image: url('assets/lumberjack.png');
-  display: block;        /* always visible */
+  display: block;     /* always visible */
 }
 
 .fish {
   bottom: 5%;
   right: 15%;
-  width: 128px;          /* scaled from 16x16 */
+  width: 128px;       /* scaled from 16x16 */
   height: 128px;
   background-image: url('assets/fish.png');
-  display: none;         /* hidden until paragraph 4 */
+  display: none;      /* hidden until triggered in JS */
 }
 
 /* Floating Animation */
@@ -73,4 +73,49 @@ body {
 
 /* =======================
    Story Box
-=====================
+======================= */
+.story-box {
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(30, 20, 10, 0.7);
+  padding: 20px;
+  border-radius: 12px;
+  width: 80%;
+  max-width: 600px;
+  min-height: 100px;
+  z-index: 3;
+  transition: opacity 0.5s ease;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/* =======================
+   Controls (Back / Next)
+======================= */
+.controls {
+  position: absolute;
+  bottom: 8%;
+  width: 100%;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+button {
+  background: #d18b47;
+  color: #fff7e6;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background: #e2a76f;
+  transform: scale(1.05);
+}
