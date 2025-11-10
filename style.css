@@ -1,57 +1,76 @@
-const storyText = document.getElementById("story-text");
-const nextBtn = document.getElementById("next-btn");
-const backBtn = document.getElementById("back-btn");
-const fishSprite = document.querySelector(".fish");
-
-// Your story paragraphs
-const story = [
-  "There lived a lumberjack in the forest with the birch trees. He chopped wood from dusk till dawn.",
-  "He enjoyed his work. It allowed him to be by himself.",
-  "After the day's work, he would sit by the river and watch the sun fade beyond the trees.",
-  "One day, during his supper, he finds a fish.",  // fish appears here
-  "The fish says, 'O beast of the lands. I have seen you many a day near the river. Will you come to destroy the water-land, the way you have waged war against the forest?'",  
-  "The lumberjack replies, 'Sire, I have no wish nor desire to harm your abode. I simply come here to awe at the sight of the river and the suns.'",
-  "'I see. You seek not destruction, you merely gaze at the sky and the world around. What for, may I ask?'",
-  "'I humbly apologise. I do not have an answer to your query. I come here because I think I am required to... by my very nature?'",
-  "'What nature do you speak of, o beast of the lands?'",
-  "'The innate nature of my species. We are drawn by mesmerising sights. Beauty of which we cannot rationally measure.'",
-  "'Oh. I understand.'",
-  "'Really sire? Do not mind my curiosity, but, what do you mean?'"
-];
-
-let index = 0;
-
-function showText() {
-  // Show or hide fish sprite
-  if (index >= 3) { // index 3 is where fish first appears
-    fishSprite.style.display = "block";
-  } else {
-    fishSprite.style.display = "none";
-  }
-
-  // Fade in text
-  storyText.style.opacity = 0;
-  setTimeout(() => {
-    storyText.textContent = story[index];
-    storyText.style.opacity = 1;
-  }, 200);
+/* =======================
+   General Setup
+======================= */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: 'Georgia', serif;
+  background: linear-gradient(to top, #3b240b, #8b4513, #ffb347);
+  overflow: hidden;
+  color: #fff7e6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-// Next paragraph
-nextBtn.addEventListener("click", () => {
-  if (index < story.length - 1) {
-    index++;
-    showText();
-  }
-});
+/* =======================
+   Scene Container
+======================= */
+.scene {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
 
-// Previous paragraph
-backBtn.addEventListener("click", () => {
-  if (index > 0) {
-    index--;
-    showText();
-  }
-});
+/* =======================
+   Background
+======================= */
+.background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: url('assets/forest-sunset.png') center/cover no-repeat;
+  filter: brightness(0.8);
+  transition: opacity 1s ease;
+}
 
-// Initialize first paragraph
-showText();
+/* =======================
+   Sprites
+======================= */
+.sprite {
+  position: absolute;
+  z-index: 2;
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: float 3s ease-in-out infinite;
+}
+
+.lumberjack {
+  bottom: 10%;
+  left: 15%;
+  width: 128px;          /* scaled from 48x48 */
+  height: 128px;
+  background-image: url('assets/lumberjack.png');
+  display: block;        /* always visible */
+}
+
+.fish {
+  bottom: 5%;
+  right: 15%;
+  width: 128px;          /* scaled from 16x16 */
+  height: 128px;
+  background-image: url('assets/fish.png');
+  display: none;         /* hidden until paragraph 4 */
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* =======================
+   Story Box
+=====================
