@@ -3,10 +3,11 @@ const lumberjack = document.querySelector('.lumberjack');
 const fish = document.querySelector('.fish');
 
 const dialogues = [
-  { speaker: 'lumberjack', text: "There lived a lumberjack in the forest..." },
-  { speaker: 'fish', text: "O beast of the lands..." },
-  { speaker: 'lumberjack', text: "Sire, I have no wish..." },
-  // add more...
+  { speaker: 'lumberjack', text: "There lived a lumberjack in the forest with the birch trees..." },
+  { speaker: 'fish', text: "O beast of the lands. I have seen you many a day near the river..." },
+  { speaker: 'lumberjack', text: "Sire, I have no wish nor desire to harm your abode..." },
+  { speaker: 'fish', text: "I once knew someone who also only ever wanted to gaze at something beautiful..." }
+  // Add more dialogues here
 ];
 
 let index = 0;
@@ -14,21 +15,21 @@ let index = 0;
 function showDialogue(i) {
   storyText.textContent = dialogues[i].text;
 
+  // Ensure fish is visible after first paragraph
+  if (i >= 1) {
+    fish.style.display = 'block';
+  }
+
   // Remove bobbing from both
   lumberjack.classList.remove('bobbing');
   fish.classList.remove('bobbing');
 
-  // Show fish if it's fish's turn
-  if (dialogues[i].speaker === 'fish') {
-    fish.style.display = 'block';
-    fish.classList.add('bobbing');
-  } else {
-    fish.style.display = 'none';
-  }
-
-  // Lumberjack bobs if it's his turn
+  // Apply bobbing only to current speaker
   if (dialogues[i].speaker === 'lumberjack') {
     lumberjack.classList.add('bobbing');
+  }
+  if (dialogues[i].speaker === 'fish') {
+    fish.classList.add('bobbing');
   }
 }
 

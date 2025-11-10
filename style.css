@@ -1,5 +1,5 @@
 /* =======================
-   Body & Scene Setup
+   Body & Scene
 ======================= */
 body {
   margin: 0;
@@ -43,10 +43,11 @@ body {
   border-radius: 12px;
   width: 80%;
   max-width: 600px;
-  min-height: 120px;
+  height: 220px;         /* fixed height */
   margin: 0 auto;
   font-size: 18px;
   line-height: 1.5;
+  overflow-y: auto;      /* scroll if text too long */
 }
 
 /* =======================
@@ -57,21 +58,21 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
   margin: 10px auto;
-  width: 150px;      /* default size */
-  height: 150px;
   transition: transform 0.3s ease;
 }
 
-/* Specific sizes for characters */
+/* Specific sizes */
 .lumberjack {
+  width: 150px;
+  height: 150px;
   background-image: url('assets/lumberjack.png');
 }
 
 .fish {
-  background-image: url('assets/fish.png');
-  width: 64px;       /* smaller than lumberjack */
+  width: 64px;
   height: 64px;
-  display: none;     /* show via JS when needed */
+  background-image: url('assets/fish.png');
+  display: none; /* hidden initially */
 }
 
 /* =======================
@@ -82,20 +83,21 @@ body {
   50% { transform: translateY(-10px); }
 }
 
-/* Class to apply bobbing to active speaker */
 .bobbing {
   animation: bob 1.5s ease-in-out infinite;
 }
 
 /* =======================
-   Controls (Back / Next)
+   Controls
 ======================= */
 .controls {
-  position: relative;
-  margin-top: 20px;
+  position: absolute;
+  bottom: 5%;   /* fixed position */
+  width: 100%;
   display: flex;
   justify-content: center;
   gap: 20px;
+  z-index: 3;
 }
 
 button {
