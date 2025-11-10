@@ -1,22 +1,19 @@
 /* =======================
-   General Setup
+   Body & Scene Setup
 ======================= */
 body {
   margin: 0;
   padding: 0;
   height: 100vh;
   font-family: 'Georgia', serif;
-  background: #3b240b;
   overflow: hidden;
+  background: #3b240b;
   color: #fff7e6;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* =======================
-   Scene Container
-======================= */
 .scene {
   position: relative;
   width: 100%;
@@ -33,7 +30,23 @@ body {
   z-index: 0;
   background: url('assets/forest-sunset.png') center/cover no-repeat;
   filter: brightness(0.8);
-  transition: opacity 1s ease;
+}
+
+/* =======================
+   Story Box
+======================= */
+.story-box {
+  position: relative;
+  z-index: 2;
+  background: rgba(30, 20, 10, 0.7);
+  padding: 20px;
+  border-radius: 12px;
+  width: 80%;
+  max-width: 600px;
+  min-height: 120px;
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 1.5;
 }
 
 /* =======================
@@ -43,62 +56,43 @@ body {
   display: block;
   background-size: contain;
   background-repeat: no-repeat;
-  margin: 10px auto;   /* centers horizontally */
-  animation: float 3s ease-in-out infinite;
-}
-
-/* Lumberjack: main character, bigger */
-.lumberjack {
-  width: 150px;         /* a bit bigger than before */
+  margin: 10px auto;
+  width: 150px;      /* default size */
   height: 150px;
+  transition: transform 0.3s ease;
+}
+
+/* Specific sizes for characters */
+.lumberjack {
   background-image: url('assets/lumberjack.png');
-  display: block;
 }
 
-/* Fish: smaller, but visible and proportional */
 .fish {
-  width: 64px;          /* smaller than lumberjack */
-  height: 64px;
   background-image: url('assets/fish.png');
-  display: none;        /* show with JS at the right paragraph */
-}
-
-/* Optional: slightly different float amplitude for each */
-.lumberjack { animation: float 3s ease-in-out infinite; }
-.fish { animation: float 2.5s ease-in-out infinite; }
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+  width: 64px;       /* smaller than lumberjack */
+  height: 64px;
+  display: none;     /* show via JS when needed */
 }
 
 /* =======================
-   Story Box
+   Bobbing Animation
 ======================= */
-.story-box {
-  position: absolute;
-  bottom: 20%;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(30, 20, 10, 0.7);
-  padding: 20px;
-  border-radius: 12px;
-  width: 80%;
-  max-width: 600px;
-  min-height: 100px;
-  z-index: 3;
-  transition: opacity 0.5s ease;
-  font-size: 18px;
-  line-height: 1.5;
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Class to apply bobbing to active speaker */
+.bobbing {
+  animation: bob 1.5s ease-in-out infinite;
 }
 
 /* =======================
    Controls (Back / Next)
 ======================= */
 .controls {
-  position: absolute;
-  bottom: 8%;
-  width: 100%;
-  z-index: 3;
+  position: relative;
+  margin-top: 20px;
   display: flex;
   justify-content: center;
   gap: 20px;
