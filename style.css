@@ -40,32 +40,32 @@ body {
    Sprites
 ======================= */
 .sprite {
-  position: absolute;
-  z-index: 2;
+  display: block;
   background-size: contain;
   background-repeat: no-repeat;
+  margin: 10px auto;   /* centers horizontally */
   animation: float 3s ease-in-out infinite;
 }
 
+/* Lumberjack: main character, bigger */
 .lumberjack {
-  bottom: 10%;
-  left: 15%;
-  width: 128px;       /* scaled from 48x48 */
-  height: 128px;
+  width: 150px;         /* a bit bigger than before */
+  height: 150px;
   background-image: url('assets/lumberjack.png');
-  display: block;     /* always visible */
+  display: block;
 }
 
+/* Fish: smaller, but visible and proportional */
 .fish {
-  bottom: 5%;
-  right: 15%;
-  width: 128px;       /* scaled from 16x16 */
-  height: 128px;
+  width: 64px;          /* smaller than lumberjack */
+  height: 64px;
   background-image: url('assets/fish.png');
-  display: none;      /* hidden until triggered in JS */
+  display: none;        /* show with JS at the right paragraph */
 }
 
-/* Floating Animation */
+/* Optional: slightly different float amplitude for each */
+.lumberjack { animation: float 3s ease-in-out infinite; }
+.fish { animation: float 2.5s ease-in-out infinite; }
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-8px); }
