@@ -3,23 +3,23 @@ const lumberjack = document.querySelector('.lumberjack');
 const fish = document.querySelector('.fish');
 
 const dialogues = [
-  // Narration only
+  // Narration broken into smaller pieces
   { speaker: null, text: "There lived a lumberjack in the forest with the birch trees. He chopped wood from dusk till dawn." },
-  { speaker: null, text: "He enjoyed his work; it allowed him to be by himself. Chopping wood never made him tired, nor did he ever want to stop being a lumberjack." },
-  { speaker: null, text: "It was all he knew. After the day's work was done, he would sit near the river and watch the sun setting beyond the trees. He would have the supper he cooked for himself the day before." },
+  { speaker: null, text: "He found satisfaction in the labor, for it allowed him solitude. The swing of his axe never wearied him, nor did he wish to cease his work." },
+  { speaker: null, text: "This was all he knew. When the day's work ended, he would sit beside the river and watch the sun sink beyond the trees. He ate the supper he had prepared the day before." },
 
   // Dialogue starts
-  { speaker: 'lumberjack', text: "One day during his supper, he finds a fish." },
-  { speaker: 'fish', text: "O beast of the lands. I have seen you many a day near the river. Will you come to destroy the water-land, the way you have waged war against the forest?" },
-  { speaker: 'lumberjack', text: "Sire, I have no wish nor desire to harm your abode. I simply come here to awe at the sight of the river and the suns." },
-  { speaker: 'fish', text: "I see. You seek not destruction, you merely gaze at the sky and the world around. What for, may I ask?" },
-  { speaker: 'lumberjack', text: "I humbly apologise. I do not have an answer to your query. I come here because I think I am required to... by my very nature?" },
-  { speaker: 'fish', text: "What nature do you speak of, o beast of the lands?" },
-  { speaker: 'lumberjack', text: "The innate nature of my species. We are drawn by mesmerising sights. Beauty of which we can not rationally measure." },
-  { speaker: 'fish', text: "Oh. I understand." },
-  { speaker: 'lumberjack', text: "Really sire? Do not mind my curiosity, but, what do you mean?" }
+  { speaker: 'lumberjack', text: "One day during his supper, he notices a fish." },
+  { speaker: 'fish', text: "O creature of the land, I have observed you many days by this river. Will you come to despoil the water, as you have wrought upon the forest?" },
+  { speaker: 'lumberjack', text: "Sire, I have no desire to harm your home. I am here only to behold the river and the suns." },
+  { speaker: 'fish', text: "I see. You seek not to destroy; you merely observe the sky and the world around. For what purpose, may I ask?" },
+  { speaker: 'lumberjack', text: "I cannot answer your question. I come because it feels required of me… by my very nature." },
+  { speaker: 'fish', text: "What nature do you speak of, creature of the land?" },
+  { speaker: 'lumberjack', text: "The innate nature of my kind. We are drawn to the mesmerizing, to beauty beyond rational measure." },
+  { speaker: 'fish', text: "Ah… I understand." },
+  { speaker: 'lumberjack', text: "Truly, sire? Do not mind my curiosity, but what do you mean?" }
 
-  // Continue adding the rest of your story
+  // You can continue adding the rest of your Dostoevsky-style story here
 ];
 
 let index = 0;
