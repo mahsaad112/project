@@ -16,7 +16,7 @@ const storyData = [
   { text: "There lived a lumberjack in the forest with the birch trees. He chopped wood from dusk till dawn.", photo: null, sprites: [] },
   { text: "He found satisfaction in the labor, for it allowed him solitude. The swing of his axe never wearied him, nor did he wish to cease his work.", photo: null, sprites: [] },
   { text: "This was all he knew. When the day's work ended, he would sit beside the river and watch the sun sink beyond the trees. He ate the supper he had prepared the day before.", photo: null, sprites: [] },
-  { text: "One day during his supper, he notices a fish.", photo: null, sprites: ["lumberjack"] },
+  { text: "One day during his supper, he notices a giant rainbow trout.", photo: null, sprites: ["lumberjack"] },
   { text: "O creature of the land, I have observed you many days by this river. Will you come to despoil the water, as you have wrought upon the forest?", photo: null, sprites: ["fish"] },
   { text: "Sire, I have no desire to harm your home. I am here only to behold the river and the suns.", photo: null, sprites: ["lumberjack"] },
   { text: "I see. You seek not to destroy; you merely observe the sky and the world around. For what purpose, may I ask?", photo: null, sprites: ["fish"] },
