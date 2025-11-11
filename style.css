@@ -1,58 +1,104 @@
-/* =======================
-   Body & Scene
-======================= */
-body {
+/* Reset and general styling */
+body, html {
   margin: 0;
   padding: 0;
-  height: 100vh;
   font-family: 'Georgia', serif;
-  overflow: hidden;
-  background: #3b240b;
-  color: #fff7e6;
+  height: 100%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #222;
 }
 
 .scene {
   position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
+  width: 90%;
+  max-width: 800px;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-/* =======================
-   Background
-======================= */
+/* Background */
 .background {
   position: absolute;
-  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: url('assets/forest_sunset.png') center/cover no-repeat;
   z-index: 0;
-  background: url('assets/forest-sunset.png') center/cover no-repeat;
   filter: brightness(0.8);
 }
 
-/* =======================
-   Story Box
-======================= */
+/* Story Box */
 .story-box {
   position: relative;
   z-index: 2;
-  background: rgba(30, 20, 10, 0.7);
+  background: rgba(255, 250, 240, 0.9);
   padding: 20px;
   border-radius: 12px;
-  width: 80%;
-  max-width: 600px;
-  min-height: 220px;
-  font-size: 18px;
-  line-height: 1.5;
-  overflow-wrap: break-word;
-  word-break: break-word;
+  text-align: center;
+  width: 100%;
+  max-width: 700px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
 }
 
-/* =======================
-   Sprites container
-======================= */
+#story-text {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 15px;
+  min-height: 80px; /* keeps box height consistent */
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.controls button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  background: #8b5a2b;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.controls button:hover {
+  background: #a67853;
+}
+
+/* Photo Container */
+.photo-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 600px;
+  height: 300px;
+  margin: 15px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.photo-container img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 12px;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+/* Sprites */
 .sprites {
   position: relative;
   z-index: 2;
@@ -60,83 +106,36 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  max-width: 600px;
-  margin: 20px auto 0 auto;
+  margin-top: 10px;
 }
 
-/* =======================
-   Sprites
-======================= */
 .sprite {
-  display: none;
-  background-size: contain;
-  background-repeat: no-repeat;
   opacity: 0;
-  transition: opacity 0.6s ease, transform 0.3s ease;
+  transition: opacity 0.4s ease;
 }
 
-/* Sizes */
-.lumberjack {
-  width: 150px;
-  height: 150px;
-  background-image: url('assets/lumberjack.png');
+/* Lumberjack larger than fish */
+.sprite.lumberjack {
+  width: 80px;
+  height: auto;
 }
 
-.fish {
-  width: 64px;
-  height: 64px;
-  background-image: url('assets/fish.png');
+.sprite.fish {
+  width: 50px;
+  height: auto;
 }
 
-/* =======================
-   Bobbing Animation
-======================= */
+/* Bobbing animation */
 @keyframes bob {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
 }
 
 .bobbing {
-  animation: bob 1.5s ease-in-out infinite;
+  animation: bob 1s ease-in-out infinite;
 }
 
-/* =======================
-   Controls
-======================= */
-.controls {
-  position: relative;
-  z-index: 3;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 20px;
-}
-
-button {
-  background: #d18b47;
-  color: #fff7e6;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 6px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-
-button:hover {
-  background: #e2a76f;
-  transform: scale(1.05);
-}
-
-/* =======================
-   Text fade-in
-======================= */
+/* Fade-in text */
 .fade-in {
-  opacity: 0;
-  animation: fadeIn 0.6s forwards;
-}
-
-@keyframes fadeIn {
-  to { opacity: 1; }
+  opacity: 1 !important;
 }
