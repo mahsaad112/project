@@ -1,141 +1,113 @@
-/* Reset and general styling */
-body, html {
+body {
   margin: 0;
-  padding: 0;
+  overflow: hidden;
   font-family: 'Georgia', serif;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #222;
+  color: #fff;
+  background-color: #000;
 }
 
 .scene {
   position: relative;
-  width: 90%;
-  max-width: 800px;
-  height: 90%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
 
-/* Background */
 .background {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: url('assets/forest-sunset.png') center/cover no-repeat;
+  background: url('assets/forest_sunset.png') center/cover no-repeat;
   z-index: 0;
   filter: brightness(0.8);
 }
 
-/* Story Box */
 .story-box {
-  position: relative;
-  z-index: 2;
-  background: rgba(255, 250, 240, 0.9);
-  padding: 20px;
+  position: absolute;
+  bottom: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px 30px;
   border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+  font-size: 1.1em;
+  line-height: 1.5;
+  min-height: 100px;
   text-align: center;
-  width: 100%;
-  max-width: 700px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  z-index: 10;
+  transition: opacity 0.5s ease;
 }
 
-#story-text {
-  font-size: 1.1rem;
-  color: #333;
-  margin-bottom: 15px;
-  min-height: 80px; /* keeps box height consistent */
-  opacity: 0;
-  transition: opacity 0.6s ease;
-}
-
-/* Controls */
 .controls {
+  position: absolute;
+  bottom: 3%;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
+  gap: 20px;
+  z-index: 20;
 }
 
-.controls button {
-  padding: 8px 14px;
-  border: none;
-  border-radius: 6px;
-  background: #8b5a2b;
+button {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   color: white;
-  font-size: 1rem;
+  padding: 10px 18px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: 0.3s;
 }
 
-.controls button:hover {
-  background: #a67853;
+button:hover {
+  background: rgba(255, 255, 255, 0.4);
 }
 
-/* Photo Container */
-.photo-container {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  max-width: 600px;
-  height: 300px;
-  margin: 15px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-
-.photo-container img {
-  max-width: 100%;
-  max-height: 100%;
-  border-radius: 12px;
-  opacity: 0;
-  transition: opacity 0.6s ease;
-}
-
-/* Sprites */
+/* Sprite Base */
 .sprite {
   position: absolute;
-  bottom: 18%; /* keeps them a bit below the text box */
-  transform: translateY(0);
-  animation: idleFloat 3s ease-in-out infinite;
+  bottom: 15%;
+  z-index: 5;
   opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-  image-rendering: pixelated;
+  transition: opacity 0.8s ease;
 }
 
-/* Individual sprite positions */
 .lumberjack {
-  left: 35%;
-  width: 160px;
-  height: auto;
+  left: 25%;
+  width: 100px;
+  height: 100px;
+  background: url('assets/lumberjack.png') center/contain no-repeat;
 }
 
 .fish {
-  right: 35%;
-  width: 100px;
-  height: auto;
+  right: 25%;
+  width: 60px;
+  height: 60px;
+  background: url('assets/fish.png') center/contain no-repeat;
 }
 
-/* Bobbing animation */
-@keyframes idleFloat {
-  0% { transform: translateY(0); }
+/* Cat Sprite */
+.cat {
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 120px;
+  background: url('assets/cat.png') center/contain no-repeat;
+}
+
+/* Bobbing Animation */
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-6px); }
-  100% { transform: translateY(0); }
 }
 
-/* Sprite fade-in class */
-.sprite.visible {
+.bobbing {
+  animation: bob 1.8s ease-in-out infinite;
+}
+
+/* Fade In */
+.visible {
   opacity: 1;
-}
-
-
-/* Fade-in text */
-.fade-in {
-  opacity: 1 !important;
 }
