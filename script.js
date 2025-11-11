@@ -39,11 +39,11 @@ const storyData = [
   { text: "Sorry to interrupt you, o creature of the lands, but your manner of speech, are you implying you know 'her'?", photo: null, sprites: ["fish"] },
   { text: "Yes, sire. I am very overdue a meeting with her. I have to go back to cut logs again, till I have enough timber to build my own bridge back to her. It was good talking to you, sir. I hope we will meet again someday.", photo: null, sprites: ["lumberjack"] },
   { text: "Hi Eume! Happy birthday! I hope you are doing well.", photo: null, sprites: ["cat"] },
-  { text: "This is now me talking to you breaking the fourth wall. Yes, I have indeed turned into a cat.", photo: null, sprites: ["cat"] },
-  { text: "You're my babygirl, you know? I love you so much. And what I said in the IG story, I meant it.", photo: null, sprites: ["cat"] },
-  { text: "I absolutely adore you and I cannot wait to spend my life with you. One of my favourite pastimes is fantasising about our life together.", photo: null, sprites: ["cat"] },
-  { text: "And for all of these things to have happened, I'd say your birth was a PRETTY IMPORTANT THING!", photo: null, sprites: ["cat"] },
-  { text: "And to conclude, I am grateful, thankful, and downright DELIGHTED because of your existence. I love you so much!", photo: null, sprites: ["cat"] },
+  { text: "This is now me talking to you breaking the fourth wall. Yes, I have indeed turned into a cat. No it is non refundable.", photo: null, sprites: ["cat"] },
+  { text: "You're my babygirl, you know? I love you so much. And what I said in the Instagram story, I meant it. I can not think of any other reason to smile rather than the ones you give me.", photo: null, sprites: ["cat"] },
+  { text: "I absolutely adore you and I cannot wait to spend my life with you. One of my favourite pastimes is fantasising about our life together. I keep on drifting off to think about you all the time. And it's a valid excuse too so no one can blame me :P", photo: null, sprites: ["cat"] },
+  { text: "And for all of these things to have happened, I'd say your birth was a PRETTY IMPORTANT THING! THIS DAY IS VEEEEEERY SPECIAL FOR YOU! BECAUSE YOU'RE THE MOST SPECIAL PERSON EVER!", photo: null, sprites: ["cat"] },
+  { text: "And to conclude, I am grateful, thankful, and downright delighted because of your existence. I love you so much! Please do allow me to live my dream and grow old with you.", photo: null, sprites: ["cat"] },
 ];
 
 function updateStory() {
