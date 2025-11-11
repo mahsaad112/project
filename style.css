@@ -99,41 +99,41 @@ body, html {
 }
 
 /* Sprites */
-.sprites {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-top: 10px;
-}
-
 .sprite {
+  position: absolute;
+  bottom: 18%; /* keeps them a bit below the text box */
+  transform: translateY(0);
+  animation: idleFloat 3s ease-in-out infinite;
   opacity: 0;
-  transition: opacity 0.4s ease;
+  transition: opacity 0.5s ease-in-out;
+  image-rendering: pixelated;
 }
 
-/* Lumberjack larger than fish */
-.sprite.lumberjack {
-  width: 80px;
+/* Individual sprite positions */
+.lumberjack {
+  left: 35%;
+  width: 160px;
   height: auto;
 }
 
-.sprite.fish {
-  width: 50px;
+.fish {
+  right: 35%;
+  width: 100px;
   height: auto;
 }
 
 /* Bobbing animation */
-@keyframes bob {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+@keyframes idleFloat {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
 }
 
-.bobbing {
-  animation: bob 1s ease-in-out infinite;
+/* Sprite fade-in class */
+.sprite.visible {
+  opacity: 1;
 }
+
 
 /* Fade-in text */
 .fade-in {
