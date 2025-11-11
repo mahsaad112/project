@@ -19,6 +19,8 @@ const dialogues = [
   { speaker: 'lumberjack', text: "The innate nature of my kind. We are drawn to the mesmerizing, to beauty beyond rational measure.", photo: null },
   { speaker: 'fish', text: "Ah… I understand.", photo: null },
   { speaker: 'lumberjack', text: "Truly, sire? Do not mind my curiosity, but what do you mean?", photo: null },
+
+  // Fish describes man who admired someone
   { speaker: 'fish', text: "I once knew of a man, who loved someone so much that he looked at 'her' the same way. With warmth, care and astonishment. How could someone be so breathtaking!", photo: 'assets/photo1.jpg' },
   { speaker: 'lumberjack', text: "Sire, oh what interesting tales you speak of. Tell me more about her...", photo: null },
   { speaker: 'fish', text: "She—was who he would sing songs for if he were a bard; she was who he would write novels for if he had any literacy! She was who he would swear oaths for if he could ever become a knight! She was who, whose eyes could crumble him like leaves in autumn, whose voice had such deep pull on the strings of his existence.", photo: 'assets/photo2.jpg' },
