@@ -37,8 +37,8 @@ body {
 .sprite {
   position: absolute;
   bottom: 20%;
-  width: 140px;
-  height: 180px;
+  width: 280px;
+  height: 360px;
   image-rendering: pixelated;
   opacity: 0;
   transition: opacity 1s ease;
