@@ -10,7 +10,7 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: url('./assets/forest_sunset.png') center/cover no-repeat;
+  background: url('assets/forest_sunset.png') center/cover no-repeat;
   z-index: 0;
   filter: brightness(0.8);
 }
@@ -33,12 +33,12 @@ body {
   transition: opacity 1s ease;
 }
 
-/* Character Sprites */
+/* Sprites */
 .sprite {
   position: absolute;
   bottom: 20%;
   width: 140px;
-  height: auto;
+  height: 180px;
   image-rendering: pixelated;
   opacity: 0;
   transition: opacity 1s ease;
@@ -48,22 +48,19 @@ body {
 
 .lumberjack {
   left: 18%;
-  background: url('./assets/lumberjack.png') center/contain no-repeat;
-  background-size: contain;
+  background: url('assets/lumberjack.png') center/contain no-repeat;
 }
 
 .fish {
   right: 18%;
-  background: url('./assets/fish.png') center/contain no-repeat;
-  background-size: contain;
+  background: url('assets/fish.png') center/contain no-repeat;
 }
 
 .cat {
   left: 50%;
   transform: translateX(-50%);
   bottom: 25%;
-  background: url('./assets/cat.png') center/contain no-repeat;
-  background-size: contain;
+  background: url('assets/cat.png') center/contain no-repeat;
 }
 
 /* Bobbing animation */
